@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Kode Mono";
+  src: url(../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Audiowide";
+  src: url(../fonts/Audiowide/Audiowide-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Leckerli One";
+  src: url(../fonts/Leckerli_One/LeckerliOne-Regular.ttf);
+}
+
+//Tailles de police
+$font-multiplyer: 1.333;
+$body: 1rem;
+$h4: $body * $font-multiplyer;
+$h3: $h4 * $font-multiplyer;
+$h2: $h3 * $font-multiplyer;
+$h1: $h2 * $font-multiplyer;
+
+p {
+  font-size: clamp(1rem, $body, 1.2rem);
+}
+
+h1 {
+  font-size: clamp(2.5rem, $h1, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+h6 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
