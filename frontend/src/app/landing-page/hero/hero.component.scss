@@ -1,0 +1,72 @@
+/*
+ * Composant Hero
+ * Ce composant est la première chose que l'utilisateur voit lorsqu'il visite le site.
+ * Il contient une vidéo en arrière-plan, une phrase d'accroche ainsi que mon nom (logique pour un portfolio).
+ */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  color: white;
+  max-width: 100vw;
+
+  // Vidéo de fond
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2);
+    z-index: -1;
+    overflow: visible;
+  }
+
+  // Contenu
+  .content {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    // Phrase d'accroche
+    .catch-phrase {
+      margin-top: 30svh;
+      h1 {
+        font-size: clamp(3rem, 10vw, 9rem);
+
+        &.design {
+          font-family: 'Leckerli One';
+          font-weight: 100;
+        }
+
+        &.code {
+          font-family: 'Kode Mono';
+          color: #00ff0d;
+        }
+      }
+
+      .phrase {
+        text-align: end;
+      }
+    }
+
+    // Mon nom et mon logo
+    .me {
+      .logo {
+        width: clamp(2rem, 9vw, 10rem);
+        height: clamp(2rem, 9vw, 10rem);
+      }
+
+      font-family: "Audiowide";
+      font-weight: 400;
+      font-size: clamp(2rem, 7vw, 10rem);
+      margin-bottom: 10vh;
+    }
+  }
+}
