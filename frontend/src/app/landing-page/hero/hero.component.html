@@ -9,9 +9,18 @@
 
   <!-- Contenu de la section -->
   <div class="content">
-    <div class="catch-phrase">
+    <div class="catch-phrase" @animateCatchPhrase (@animateCatchPhrase.start)="onAnimationStart()">
       <h1 class="design">Du design</h1>
-      <h1 class="code">au code<span [@animateBlink]="blinkState" (animationstart)="toggleBlink()">_</span></h1>
+      <h1 class="code">
+        <span class="letter">a</span>
+        <span class="letter">u</span>
+        <span class="letter">&nbsp;</span>
+        <span class="letter">c</span>
+        <span class="letter">o</span>
+        <span class="letter">d</span>
+        <span class="letter">e</span>
+        <span [@animateBlink]="blinkState" (animationstart)="toggleBlink()">_</span>
+      </h1>
       <h6 class="phrase">façonnons ensemble l'avenir du numérique !</h6>
     </div>
     <h1 class="me">

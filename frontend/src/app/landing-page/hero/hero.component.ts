@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   animations: [
+    //Animation de clignotement du curseur
     trigger('animateBlink', [
       state(
         'normal',
@@ -22,6 +23,27 @@ import { Component } from '@angular/core';
         })
       ),
       transition('normal <=> blinking', [animate('.01s')]),
+    ]),
+    //Animation de la phrase d'accroche
+    trigger('animateCatchPhrase', [
+      transition(':enter', [
+        group([   //Utilisation de group plutôt que sequence parce que sequence ne fonctionne pas correctement
+          /*
+           * Animation de "Du design" à faire
+           */
+          // - Animation des lettres de "au code"
+          query('.letter',[
+            style({
+              display: 'none'
+            }),
+            stagger('150ms',[
+              animate('.1s 3.5s', style({
+                display: 'inline'
+              }))
+            ]),
+          ]),
+        ])
+      ]),
     ]),
   ],
 })
@@ -69,8 +91,8 @@ export class HeroComponent {
       letters.forEach((letter, index) => {
         setTimeout(() => {
           this.playKeyboardAudio();
-        }, index * 100);
+        }, index * 150);
       });
-    }, 500);
+    }, 3500);
   }
 }
